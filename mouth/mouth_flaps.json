@@ -10,7 +10,7 @@
     "use_action": {
       "type": "effect_on_conditions",
       "description": "Inject the Targeted Mutagen.",
-      "effect_on_conditions": [ "EOC_TARGETED_MUTAGEN_MOUTH_FLAPS" ]
+      "effect_on_conditions": ["EOC_TARGETED_MUTAGEN_MOUTH_FLAPS"]
     }
   },
   {
@@ -18,8 +18,14 @@
     "id": "EOC_TARGETED_MUTAGEN_MOUTH_FLAPS",
     "condition": { "u_has_item": "syringe" },
     "effect": [
-      { "u_assign_activity": "ACT_TARGETED_MUTAGENS_INJECT_MUTAGEN", "duration": "5 minutes" },
-      { "queue_eocs": "EOC_TARGETED_MUTAGEN_MOUTH_FLAPS_2", "time_in_future": [ "45 minutes", "240 minutes" ] }
+      {
+        "u_assign_activity": "ACT_TARGETED_MUTAGENS_INJECT_MUTAGEN",
+        "duration": "5 minutes"
+      },
+      {
+        "queue_eocs": "EOC_TARGETED_MUTAGEN_MOUTH_FLAPS_2",
+        "time_in_future": ["45 minutes", "240 minutes"]
+      }
     ]
   },
   {
@@ -27,7 +33,7 @@
     "id": "EOC_TARGETED_MUTAGEN_MOUTH_FLAPS_2",
     "effect": [
       { "u_cast_spell": { "id": "targ_mouth_flaps_sp", "hit_self": true } },
-      { "math": [ "u_vitamin('instability')", "+=", "rng(100,150)" ] }
+      { "math": ["u_vitamin('instability')", "+=", "rng(100,150)"] }
     ]
   },
   {
@@ -35,11 +41,11 @@
     "type": "SPELL",
     "name": { "str": "Targeted Mutagen: Mouth Flaps" },
     "description": "Mouth Flaps mutation spell",
-    "valid_targets": [ "self" ],
+    "valid_targets": ["self"],
     "shape": "blast",
     "effect": "mutate",
     "effect_str": "MOUTH_FLAPS",
-    "flags": [ "MUTATE_TRAIT", "SILENT" ],
+    "flags": ["MUTATE_TRAIT", "SILENT"],
     "difficulty": 1,
     "max_level": 1,
     "min_damage": 10000,
@@ -52,17 +58,22 @@
     "category": "CC_CHEM",
     "subcategory": "CSC_CHEM_MUTAGEN",
     "skill_used": "chemistry",
-    "skills_required": [ "firstaid", 2 ],
+    "skills_required": ["firstaid", 2],
     "difficulty": 8,
     "time": "45 m",
-    "batch_time_factors": [ 80, 20 ],
-    "using": [ [ "mutagen_production_standard", 25 ] ],
-    "book_learn": [ [ "manual_fishman_recipes", 7 ] ],
+    "batch_time_factors": [80, 20],
+    "using": [["mutagen_production_standard", 25]],
+    "book_learn": [["manual_fishman_recipes", 7]],
     "components": [
-      [ [ "iv_mutagen_chimera", 1 ], [ "iv_mutagen_cephalopod", 1 ], [ "iv_mutagen_insect", 1 ], [ "iv_mutagen_spider", 1 ] ],
-      [ [ "iv_mutagen", 1 ] ],
-      [ [ "purifier", 1 ] ]
+      [
+        ["iv_mutagen_chimera", 1],
+        ["iv_mutagen_cephalopod", 1],
+        ["iv_mutagen_insect", 1],
+        ["iv_mutagen_spider", 1]
+      ],
+      [["iv_mutagen", 1]],
+      [["purifier", 1]]
     ],
-    "flags": [ "SECRET" ]
+    "flags": ["SECRET"]
   }
 ]
