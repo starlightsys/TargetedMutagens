@@ -55,6 +55,7 @@
     "type": "recipe",
     "activity_level": "LIGHT_EXERCISE",
     "result": "targ_mutagen_less_sleep",
+    "id_suffix": "recipe_2",
     "category": "CC_CHEM",
     "subcategory": "CSC_CHEM_MUTAGEN",
     "skill_used": "chemistry",
